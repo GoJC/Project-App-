@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Service Intro Page</title>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+<!--	<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
+	<link rel="stylesheet" type="text/css" href="./css/Service_Intro_Page.css">
+	<link rel="stylesheet" type="text/css" href="./css/w3.css">
+</head>
+
+<body>
+	<div class="TitleBar">
+		<fieldset><img id="logo1" src="./img/Logo.JPG" /></fieldset>
+	</div>
+
+	<div class="w3-content w3-display-container" style="max-width:800px">
+		<img class="mySlides w3-animate-right" src="http://placehold.it/380x450?text=1" style="width:100%">
+		<img class="mySlides w3-animate-right" src="http://placehold.it/380x450?text=2" style="width:100%">
+		<img class="mySlides w3-animate-right" src="http://placehold.it/380x450?text=3" style="width:100%">
+		<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+			<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+			<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+		</div>
+	</div>
+	<div id="make_btn" class="w3-content w3-display-container" style="text-align:CENTER; margin-top:20px;">
+	</div>
+	
+		<!-- 외부 슬라이더 -->
+	<script>
+		var slideIndex = 1;
+		showDivs(slideIndex);
+
+		function plusDivs(n) {
+			showDivs(slideIndex += n);
+		}
+
+		function currentDiv(n) {
+			showDivs(slideIndex = n);
+		}
+		function Login(){
+			location="http://mahndoi.dothome.co.kr/Main.html";
+		}
+		function showDivs(n) {
+			var i;
+			
+			var x = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("demo");
+			if (n > x.length) {
+				slideIndex = 1
+			}
+			if (n < 1) {
+				slideIndex = x.length
+			}
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace("w3-white", "");
+			}
+			x[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " w3-white";
+			
+			if (n == 3) 
+			{
+				var c = document.getElementById("make_btn");
+				c.innerHTML += '<button class="w3-btn w3-black w3-round-xlarge w3-padding-large" onclick="Login()">시작하기</button>';
+			}
+			else
+			{
+				var c = document.getElementById("make_btn");
+				c.innerHTML = "";
+			}
+		}
+	</script>
+	
+	<!-- PhoneGap Dafault script -->
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript">
+		app.initialize();
+	</script>
+</body>
+</html>

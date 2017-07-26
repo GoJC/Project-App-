@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<head>
+	<title>Login_page</title>
+	<meta charset=utf-8 />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height,target-densitydpi=device-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+	<style>
+	html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+	}
+	</style>
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+
+<body>
+	<div>
+		<fieldset style="font-size:30px; text-align:CENTER; margin-top: 20px;margin-bottom: 30px">
+			군포 생활과학교실
+		</fieldset>
+	</div>
+	<div style="margin-top:10%; float:left; width:100%">
+		<form name="Join" action="index.html" method="post">
+			<fieldset>
+				<legend>회원계정으로 로그인</legend>
+				<div style="float:left; width:100%;">
+					<div style="width:60%;">
+											<ul >
+											<li>ID &nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" placeholder="아이디를 입력하세요" id="user_id" required></li><br>
+					<li>PW &nbsp;&nbsp;
+						<input type="password" placeholder="비밀번호를 8자 이상 입력하세요" id="user_password" required></li>
+					</ul>
+					</div>
+					<input type="submit" value="로그인" style="width:80px; height:75px;font-size:15px;" onclick="javascript:history.go(-1)">
+				</div>
+			</fieldset>
+			<fieldset style="float:left;">
+				<legend>SNS계정으로 로그인</legend>
+					<a id="cunstom-login-btn" href="http://developers.kakao.com/login">
+						<img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="175"/>
+					</a>
+					<script type='text/javascript'>
+						Kakao.init("ea07ac57e92936a6ab2a6ad527732833");
+						// 카카오 로그인 버튼을 생성합니다.
+						Kakao.Auth.createLoginButton({
+							container: '#kakao-login-btn',
+							success: function(authObj) {
+								alert(JSON.stringify(authObj));
+							},
+							fail: function(err) {
+								alert(JSON.stringify(err));
+							}
+						});
+						//]]>
+					</script>
+					<script>
+						(function(d, s, id) {
+							var js, fjs = d.getElementsByTagName(s)[0];
+							if (d.getElementById(id)) return;
+							js = d.createElement(s);
+							js.id = id;
+							js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.10&appId=467120683639631";
+							fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));
+					</script>
+					<div class="fb-login-button" style="margin-left:20;width:125px;" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
+			</fieldset>
+		</form>
+	</div>
+</body>
+
+</HTML>

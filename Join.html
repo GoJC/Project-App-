@@ -1,0 +1,97 @@
+<!-- Table을 이용한 회원가입 양식 -->
+<!--
+<doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>sign up page</title>
+</head>
+<body>
+<form name="join" method="post" action="memberSave.php"> membersave.php 파일로 회원정보저장
+ <h1>input your information</h1>
+ <table border="1">
+  <tr>
+   <td>ID</td>
+   <td><input type="text" size="30" name="id"></td>
+  </tr>
+  <tr>
+   <td>Password</td>
+   <td><input type="password" size="30" name="pwd"></td>
+  </tr>
+  <tr>
+   <td>name</td>
+   <td><input type="text" size="12" maxlength="10" name="name"></td>
+  </tr>
+  <tr>
+   <td>Position</td>
+   <td><input type="text" size="30" name="position"></td>
+  </tr>
+ </table>
+ <input type=submit value="submit"><input type=reset value="rewrite">
+ 
+   <input type="button" value="뒤로가기"onclick="javascripｔ:history.go(-1)">
+</form>
+</body>
+</html>
+
+-->
+
+
+<!DOCTYPE HTML>
+<HTML>
+    <head>
+        <title>Join_page</title>
+        <meta charset = utf-8 />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height,target-densitydpi=device-dpi" />
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+        <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+        </style>
+    </head>
+    <body>
+        <div>
+            <fieldset style="font-size:30px; text-align:CENTER; margin-top: 20px;margin-bottom: 30px">
+                군포 생활과학교실
+            </fieldset>
+        </div>
+        <div style="margin-top:30px;">
+            <form name="Join" action="index.html" method="post">
+                <fieldset>
+                    <legend>가입양식</legend>
+                    <ul>
+                        <li>이름  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="text" placeholder="이름을 입력하세요" id="user_name" required></li><br>
+                        <li>아이디 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="text" placeholder="아이디를 입력하세요" id="user_id" required></li><br>
+                        <li>비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="password" placeholder="비밀번호를 8자 이상 입력하세요" 
+                                   id="user_password"  required></li><br>
+                        <li>비밀번호(확인) &nbsp;&nbsp;<input type="password" placeholder="비밀번호를 다시 입력하세요"
+                                              id="user_password" required></li><br>
+                        <li>전화번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="tel" placeholder="010XXXXXXXX" maxlength="13" 
+                                   id="user_phone_num" required> 
+                        </li><br>
+                        <li>메일주소 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="email" placeholder="e-mail을 입력하세요"
+                                          id="user_mail_address" required></li><br>
+                    </ul>
+                </fieldset>
+                <div style="margin-top:10px; margin-left:15px">
+                    <input type=reset style="width:100px; height:40px; font-size:15px;" value="다시작성">
+                                    &nbsp;&nbsp;
+                    <input type="submit" value="가입하기" style="width:100px; height:40px;font-size:15px;">
+                                    &nbsp;&nbsp;
+                    <input type="button" value="뒤로가기" style="width:100px; height:40px;font-size:15px;" 
+                           onclick="javascript:history.go(-1)">
+                </div>
+            </form>
+        </div>
+    </body>
+</HTML>
